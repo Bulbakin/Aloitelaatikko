@@ -1,0 +1,39 @@
+<%-- 
+    Document   : etusivuOhjausryhma
+    Created on : 28.11.2017, 14:56:30
+    Author     : s1601382
+--%>
+
+<%@page import="Tietovarastopakkaus.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+        <link href="../CSS/signin.css" rel="stylesheet" type="text/css"/>
+        <link href="../CSS/style3.css" rel="stylesheet" type="text/css"/>
+
+        <title>Ohjausryhmän etusivu</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <!-- Brand -->
+            <a href="#" class="navbar-brand"><img src="pahvilaatikko2.png"></a>
+            <a class="navbar-brand" href="etusivuOhjausryhma.jsp">Aloitelaatikko</a>
+            
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ota yhteyttä ylläpitoon</a>
+                </li>
+            </ul>
+        </nav>
+        <h1></h1>
+    </body>
+</html>
