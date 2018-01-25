@@ -23,6 +23,15 @@
                 color: black;
                 text-align: center;
             }
+
+            .btnSize {
+                width: 300px;
+                height: 60px;
+            }
+
+            .formStyle {
+                margin-top: 10px;
+            }
         </style>
 
         <title>Käyttäjän etusivu</title>
@@ -41,16 +50,16 @@
             </ul>
         </nav>
         <h1></h1>
-        <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/lisaaAloite.jsp" method="post">
-            <input type="submit" class="btn btn-primary" value="lisaaAloite" name="submit">
+        <form class="formStyle" name="lisays" action="../../Aloitelaatikko_ver2/jspSivut/lisaaAloite.jsp" method="post">
+            <input type="submit" class="btn btn-primary btnSize" value="Lisää aloite" name="submit">
         </form>
-        
-        <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/tulostaAloitteetKayttaja.jsp" method="post">
-            <input type="submit" class="btn btn-primary" value="Kaikki aloitteet" name="tulostaAloitteet">
+
+        <form class="formStyle" name="lisays" action="../../Aloitelaatikko_ver2/jspSivut/tulostaAloitteetKayttaja.jsp" method="post">
+            <input type="submit" class="btn btn-primary btnSize" value="Kaikki aloitteet" name="tulostaAloitteet">
         </form>
-        
-        <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/index.jsp" method="post">
-            <input type="submit" class="btn btn-primary" value="Kirjaudu ulos" name="kirjauduUlos">
+
+        <form class="formStyle" name="lisays" action="../../Aloitelaatikko_ver2/jspSivut/index.jsp" method="post">
+            <input type="submit" class="btn btn-primary btnSize" value="Kirjaudu ulos" name="kirjauduUlos">
         </form>
     </body>
 </html>

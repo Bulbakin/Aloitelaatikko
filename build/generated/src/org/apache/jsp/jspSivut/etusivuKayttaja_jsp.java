@@ -62,6 +62,11 @@ public final class etusivuKayttaja_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                color: black;\n");
       out.write("                text-align: center;\n");
       out.write("            }\n");
+      out.write("\n");
+      out.write("            btnSize {\n");
+      out.write("                padding: 5px;\n");
+      out.write("                width: 200px;\n");
+      out.write("            }\n");
       out.write("        </style>\n");
       out.write("\n");
       out.write("        <title>Käyttäjän etusivu</title>\n");
@@ -80,6 +85,17 @@ public final class etusivuKayttaja_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("            </ul>\n");
       out.write("        </nav>\n");
       out.write("        <h1></h1>\n");
+      out.write("        <form name=\"lisays\" action=\"../../Aloitelaatikko_ver2/lisaaAloite.jsp\" method=\"post\">\n");
+      out.write("            <input type=\"submit\" class=\"btn btn-primary btnSize\" value=\"Lisää aloite\" name=\"submit\">\n");
+      out.write("        </form>\n");
+      out.write("\n");
+      out.write("        <form name=\"lisays\" action=\"../../Aloitelaatikko_ver2/tulostaAloitteetKayttaja.jsp\" method=\"post\">\n");
+      out.write("            <input type=\"submit\" class=\"btn btn-primary btnSize\" value=\"Kaikki aloitteet\" name=\"tulostaAloitteet\">\n");
+      out.write("        </form>\n");
+      out.write("\n");
+      out.write("        <form name=\"lisays\" action=\"../../Aloitelaatikko_ver2/index.jsp\" method=\"post\">\n");
+      out.write("            <input type=\"submit\" class=\"btn btn-primary btnSize\" value=\"Kirjaudu ulos\" name=\"kirjauduUlos\">\n");
+      out.write("        </form>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
