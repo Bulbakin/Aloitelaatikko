@@ -5,7 +5,7 @@
  */
 package Servletit;
 
-import Tietovarastopakkaus.Tietovarasto;
+import Tietovarastopakkaus.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -44,12 +45,16 @@ public class index extends HttpServlet {
             String salasana = request.getParameter("salasana");
 
             if (tietovarasto.haeKayttaja(username, salasana)) {
+                String ryhma = tietovarasto.getRyhma();
+                HttpSession session = request.getSession();
+                session.setAttribute("ryhma", ryhma);
+                session.setAttribute("knimi", username);
                 if (Tietovarasto.haeRyhma().equals("Yllapito")) {
-                    response.sendRedirect("jspSivut/etusivuYllapito.jsp");
+                    response.sendRedirect("jspSivut/Yllapito/etusivuYllapito.jsp");
                 } else if (Tietovarasto.haeRyhma().equals("Ohjausryhma")) {
-                    response.sendRedirect("jspSivut/etusivuOhjausryhma.jsp");
+                    response.sendRedirect("jspSivut/Ohjausryhma/etusivuOhjausryhma.jsp");
                 } else {
-                    response.sendRedirect("jspSivut/etusivuKayttaja.jsp");
+                    response.sendRedirect("jspSivut/Kayttaja/etusivuKayttaja.jsp");
                 }
             } else {
                 tietovarasto.setLogin(false);

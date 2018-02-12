@@ -13,6 +13,7 @@
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Hello: <%= session.getAttribute("knimi") %> <%= session.getAttribute("ryhma")%></h1>
+        
     </body>
 </html>

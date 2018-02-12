@@ -14,6 +14,7 @@ public class Tietovarasto {
     private static Kayttaja naapuri;
     public static String vaihe;
     public static boolean login = true;
+    public String ryhma;
 
     public Tietovarasto(String ajuri, String url, String kayttajatunnus, String salasana) {
         this.ajuri = ajuri;
@@ -26,6 +27,10 @@ public class Tietovarasto {
         this("com.mysql.jdbc.Driver", "jdbc:mysql://localhost:3306/aloitelaatikko", "root", "");
     }
 
+    public String getRyhma() {
+        return naapuri.getRyhma();
+    }
+    
     public static int getKayttajaID() {
         return naapuri.getKayttajaID();
     }
