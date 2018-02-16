@@ -17,12 +17,14 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Julius Kinnarinen
  */
-@WebFilter(filterName = "YllapitoFilter", urlPatterns = {"/Yllapito/*"})
+@WebFilter(filterName = "YllapitoFilter", urlPatterns = {"/jspSivut/Yllapito/*"})
 public class YllapitoFilter implements Filter {
 
     private static final boolean debug = true;
@@ -35,16 +37,20 @@ public class YllapitoFilter implements Filter {
     public YllapitoFilter() {
     }
 
-    public void doFilter(ServletRequest Srequest, ServletResponse response,
+    public void doFilter(ServletRequest Srequest, ServletResponse Sresponse,
             FilterChain chain)
             throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) Srequest;
-        System.out.println(request.getRequestURI());
+        HttpServletResponse response = (HttpServletResponse) Sresponse;
+        String uri = request.getRequestURI();
+        System.out.println(uri);
 
-        if (request.getSession().getAttribute("ryhma") == "Yllapito") {
+        HttpSession session = request.getSession();
+
+        if (session.getAttribute("ryhma").equals("Yllapito")) {
             chain.doFilter(Srequest, response);
         } else {
-            request.getRequestDispatcher(request.getContextPath() + "/index.jsp").forward(Srequest, response);
+            response.sendRedirect("../index.jsp");
         }
     }
 
