@@ -50,11 +50,11 @@
             </ul>
         </nav>
         <h1></h1>
-        <form class="formStyle" name="lisays" action="jspSivut/Kayttaja/lisaaAloite.jsp" method="post">
+        <form class="formStyle" name="lisays" action="lisaaAloite.jsp" method="post">
             <input type="submit" class="btn btn-primary btnSize" value="Lisää aloite" name="submit">
         </form>
 
-        <form class="formStyle" name="lisays" action="jspSivut/Kayttaja/tulostaAloitteetKayttaja.jsp" method="post">
+        <form class="formStyle" name="lisays" action="tulostaAloitteetKayttaja.jsp" method="post">
             <input type="submit" class="btn btn-primary btnSize" value="Kaikki aloitteet" name="tulostaAloitteet">
         </form>
 

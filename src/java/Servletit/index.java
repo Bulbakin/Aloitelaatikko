@@ -52,11 +52,11 @@ public class index extends HttpServlet {
                 session.setAttribute("ryhma", ryhma);
                 session.setAttribute("knimi", username);
                 if (Tietovarasto.haeRyhma().equals("Yllapito")) {
-                    response.sendRedirect("jspSivut/Yllapito/etusivuYllapito.jsp");
+                    response.sendRedirect("jspSivut/LoggedJsp/Yllapito/etusivuYllapito.jsp");
                 } else if (Tietovarasto.haeRyhma().equals("Ohjausryhma")) {
-                    response.sendRedirect("jspSivut/Ohjausryhma/etusivuOhjausryhma.jsp");
+                    response.sendRedirect("jspSivut/LoggedJsp/Ohjausryhma/etusivuOhjausryhma.jsp");
                 } else {
-                    response.sendRedirect("jspSivut/Kayttaja/etusivuKayttaja.jsp");
+                    response.sendRedirect("jspSivut/LoggedJsp/Kayttaja/etusivuKayttaja.jsp");
                 }
             } else {
                 tietovarasto.setLogin(false);

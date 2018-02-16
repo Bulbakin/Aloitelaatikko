@@ -60,7 +60,7 @@
 
         </style>
         <title>Aloitteiden haku</title>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
     </head>
     <body>
         <%
@@ -92,7 +92,7 @@
                             <td><%= aloite.getPvm()%></td>
                             <td><%= aloite.getKayttajaID()%></td>
                             <td>
-                                <form name="lisays" action='../../Aloitelaatikko_ver2/jspSivut/muokkaaAloitetta.jsp?aloiteID=<%=aloite.getAloiteID()%>&aloitenimi=<%=aloite.getAloitenimi()%>&aloitekuvaus=<%=aloite.getAloitekuvaus()%>' method="post">
+                                <form name="lisays" action='muokkaaAloitetta.jsp?aloiteID=<%=aloite.getAloiteID()%>&aloitenimi=<%=aloite.getAloitenimi()%>&aloitekuvaus=<%=aloite.getAloitekuvaus()%>' method="post">
                                     <input class="btn btn-danger muokkaa-btn" type="submit" value=">" name="muokkaa">
                                 </form>
                             </td>

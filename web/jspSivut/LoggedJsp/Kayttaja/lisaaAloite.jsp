@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Uuden aloitteen luominen</h1>
-        <form name="lisays" action="../../Aloitelaatikko_ver2/lisaaAloite" method="post">
+        <form name="lisays" action="/Aloitelaatikko_ver2/lisaaAloite" method="post">
             <input type="text" name="aloitenimi" placeholder="Otsikko"><br>
             <textarea rows="10" cols="40" name="aloitekuvaus" placeholder="Kuvaus"></textarea><br>
             

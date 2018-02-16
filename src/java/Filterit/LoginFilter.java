@@ -21,7 +21,7 @@ import javax.servlet.annotation.WebFilter;
  *
  * @author s1601382
  */
-@WebFilter(filterName = "LoginFilter", urlPatterns = {"/jspSivut/*", "/*"})
+@WebFilter(filterName = "LoginFilter", urlPatterns = {"/jspSivut/LoggedJsp/*"})
 public class LoginFilter implements Filter {
     
     private static final boolean debug = true;

@@ -26,7 +26,7 @@
             }
         </style>
         <title>Muokkaa aloitetta</title>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
     </head>
     <body>
         <%
@@ -38,13 +38,13 @@
         %>
         <div class="container">
             <h1>Muokkaa aloitetta</h1>
-            <form name="lisays" action="../../Aloitelaatikko_ver2/muokkaaAloitetta" method="post">
+            <form name="lisays" action="/Aloitelaatikko_ver2/muokkaaAloitetta" method="post">
                 <input type="text" class="" name="aloitenimi" value="<%=aloiteNimi%>"><br>
                 <textarea rows="10" cols="40" name="aloitekuvaus"><%=aloiteKuvaus%></textarea><br>
                 <input type="submit" class="btn btn-danger" name="submit" value="Muokkaa">
                 <input type="hidden" name="aloiteID" value='<%=aloiteID%>'>
             </form>
-            <form name="lisays" action="../../Aloitelaatikko_ver2/jspSivut/tulostaAloitteetKayttaja.jsp" method="post">
+            <form name="lisays" action="../Kayttaja/tulostaAloitteetKayttaja.jsp" method="post">
                 <input class="btn btn-danger" type="submit" value="Poista" <% tietovarasto.poistaAloite(Integer.parseInt(aloiteID));%>>
             </form>
         </div>
