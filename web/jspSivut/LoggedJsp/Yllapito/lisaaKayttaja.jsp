@@ -35,7 +35,7 @@
         <div class="container">
             <div class="form-group">
                 <h1>Uuden käyttäjän lisäys</h1>
-                <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/lisaaKayttaja" method="post">
+                <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/jspSivut/LoggedJsp/Yllapito/lisaaKayttaja" method="post">
                     <input type="text" class="form-control" name="etunimi" placeholder="Etunimi"><br>
                     <input type="text" class="form-control" name="sukunimi" placeholder="Sukunimi"><br>
                     <input type="email" class="form-control" name="email" placeholder="Email"><br>

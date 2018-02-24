@@ -60,7 +60,7 @@
 
         </style>
         <title>Aloitteiden haku</title>
-        <link rel="shortcut icon" href="Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     </head>
     <body>
         <%
