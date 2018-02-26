@@ -41,7 +41,7 @@
             <form name="lisays" action="/Aloitelaatikko_ver2/muokkaaAloitetta" method="post">
                 <input type="text" class="" name="aloitenimi" value="<%=aloiteNimi%>"><br>
                 <textarea rows="10" cols="40" name="aloitekuvaus"><%=aloiteKuvaus%></textarea><br>
-                <input type="submit" class="btn btn-danger" name="submit" value="Muokkaa">
+                <input type="submit" class="btn btn-danger" name="submit" value="Muokkaa" <% tietovarasto.aloitteenMuokkaaminen(Integer.parseInt(aloiteID), aloiteNimi, aloiteKuvaus);%>>
                 <input type="hidden" name="aloiteID" value='<%=aloiteID%>'>
             </form>
             <form name="lisays" action="../Kayttaja/tulostaAloitteetKayttaja.jsp" method="post">

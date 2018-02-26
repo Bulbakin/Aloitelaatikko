@@ -1,11 +1,10 @@
-package org.apache.jsp.jspSivut.LoggedJsp.Kayttaja;
+package org.apache.jsp.jspSivut.LoggedJsp.Yllapito;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import Tietovarastopakkaus.*;
 
-public final class poistaAloite_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class etusivuYllapito_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -53,68 +52,46 @@ public final class poistaAloite_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\r\n");
       out.write("        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js\"></script>\r\n");
       out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\"></script>\r\n");
+      out.write("\r\n");
+      out.write("        <link href=\"../CSS/signin.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
+      out.write("        <link href=\"../CSS/style3.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
       out.write("        <style>\r\n");
       out.write("            body {\r\n");
-      out.write("                background-color: #14cad4;\r\n");
+      out.write("                background-image: url(\"../jspSivut/spagettikissav2.jpg\");\r\n");
+      out.write("                background-size: cover;\r\n");
       out.write("                color: black;\r\n");
+      out.write("                text-align: center;\r\n");
       out.write("            }\r\n");
       out.write("\r\n");
-      out.write("            table {\r\n");
-      out.write("                background-color: white !important;\r\n");
-      out.write("                border: 1px;\r\n");
+      out.write("            .btnSize {\r\n");
+      out.write("                width: 300px;\r\n");
+      out.write("                height: 60px;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            .formStyle {\r\n");
+      out.write("                margin-top: 10px;\r\n");
       out.write("            }\r\n");
       out.write("        </style>\r\n");
-      out.write("        <title>Poista aloite</title>\r\n");
+      out.write("\r\n");
+      out.write("        <title>Ylläpidon etusivu</title>\r\n");
       out.write("        <link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\">\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
-      out.write("        ");
-
-            Tietovarasto tietovarasto = new Tietovarasto();
-
-            String aloiteID = request.getParameter("aloiteID");
-            String aloiteNimi = request.getParameter("aloitenimi");
-            String aloiteKuvaus = request.getParameter("aloitekuvaus");
-            String pvm = request.getParameter("pvm");
-        
+      out.write("        <nav class=\"navbar navbar-expand-md navbar-dark\">\r\n");
+      out.write("            <!-- Brand -->\r\n");
+      out.write("            <a href=\"etusivuYllapito.jsp\" class=\"navbar-brand\"><img src=\"pahvilaatikko2.png\"></a>\r\n");
+      out.write("            <a class=\"navbar-brand\" href=\"etusivuYllapito.jsp\">Aloitelaatikko</a>\r\n");
       out.write("\r\n");
-      out.write("        <div class=\"container\">\r\n");
-      out.write("            <h1>Poista aloite</h1>\r\n");
-      out.write("            <div class=\"table-responsive\">\r\n");
-      out.write("                <table class=\"table table-striped\">\r\n");
-      out.write("                    <thead class=\"thead-dark\">\r\n");
-      out.write("                        <tr>\r\n");
-      out.write("                            <th>ID</th>\r\n");
-      out.write("                            <th>Nimi</th>\r\n");
-      out.write("                            <th>Kuvaus</th>\r\n");
-      out.write("                            <th>Pvm</th>\r\n");
-      out.write("                        </tr>\r\n");
-      out.write("                    </thead>\r\n");
-      out.write("                    <tbody>\r\n");
-      out.write("                        <tr>\r\n");
-      out.write("                            <td>");
-      out.print(aloiteID);
-      out.write("</td>\r\n");
-      out.write("                            <td>");
-      out.print(aloiteNimi);
-      out.write("</td>\r\n");
-      out.write("                            <td>");
-      out.print(aloiteKuvaus);
-      out.write("</td>\r\n");
-      out.write("                            <td>");
-      out.print(pvm);
-      out.write("</td>\r\n");
-      out.write("                        </tr>\r\n");
-      out.write("                    </tbody>\r\n");
-      out.write("                </table>\r\n");
-      out.write("                <form name=\"lisays\" action=\"../../Aloitelaatikko_ver2/poistaAloite\" method=\"post\">\r\n");
-      out.write("                    <input type=\"submit\" class=\"btn btn-danger\" name=\"submit\" value=\"Poista\">\r\n");
-      out.write("                    <input type=\"hidden\" name=\"aloiteID\" value='");
-      out.print(aloiteID);
-      out.write("'>\r\n");
-      out.write("                </form>\r\n");
-      out.write("            </div>\r\n");
-      out.write("        </div>\r\n");
+      out.write("            <ul class=\"navbar-nav\">\r\n");
+      out.write("                <li class=\"nav-item\">\r\n");
+      out.write("                    <a class=\"nav-link\" href=\"#\">Ota yhteyttä ylläpitoon</a>\r\n");
+      out.write("                </li>\r\n");
+      out.write("            </ul>\r\n");
+      out.write("        </nav>\r\n");
+      out.write("        <h1></h1>\r\n");
+      out.write("        <form class=\"formStyle\" name=\"lisays\" action=\"LoggedJsp/Yllapito/tulostaKayttajat.jsp\" method=\"post\">\r\n");
+      out.write("            <input type=\"submit\" class=\"btn btn-primary btnSize\" value=\"Käyttäjätiedot\" name=\"submit\">\r\n");
+      out.write("        </form>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

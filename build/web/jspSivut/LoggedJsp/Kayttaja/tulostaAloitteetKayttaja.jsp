@@ -93,7 +93,7 @@
                             <td><%= aloite.getKayttajaID()%></td>
                             <td>
                                 <form name="lisays" action='muokkaaAloitetta.jsp?aloiteID=<%=aloite.getAloiteID()%>&aloitenimi=<%=aloite.getAloitenimi()%>&aloitekuvaus=<%=aloite.getAloitekuvaus()%>' method="post">
-                                    <input class="btn btn-danger muokkaa-btn" type="submit" value=">" name="muokkaa">
+                                    <input class="btn btn-warning muokkaa-btn" type="submit" value=">" name="muokkaa">
                                 </form>
                             </td>
                         </tr>
