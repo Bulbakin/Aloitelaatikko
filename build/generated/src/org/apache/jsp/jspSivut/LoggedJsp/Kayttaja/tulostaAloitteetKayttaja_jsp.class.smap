@@ -1,0 +1,20 @@
+SMAP
+tulostaAloitteetKayttaja_jsp.java
+JSP
+*S JSP
+*F
++ 0 tulostaAloitteetKayttaja.jsp
+jspSivut/LoggedJsp/Kayttaja/tulostaAloitteetKayttaja.jsp
+*L
+5,62:45
+67,2:108
+68,17:110
+85,2:128
+86,3:130
+89,5:133,3
+94:148
+95:149,7
+96,4:156
+100:160,3
+101,7:163
+*E

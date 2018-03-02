@@ -372,12 +372,12 @@ public class Tietovarasto {
         Connection yhteys = null;
         PreparedStatement lisayslause = null;
         try {
-            yhteys = YhteydenHallinta.avaaYhteys(ajuri, url, kayttajatunnus, salasana);
+            yhteys = YhteydenHallinta.avaaYhteys(ajuri, url, this.kayttajatunnus, this.salasana);
             if (yhteys == null) {
                 return false;
             }
 
-            String SQL = "update aloitteet set etunimi=?, sukunimi=?, email=?, kayttajatunnus=?, salasana=?, puhelin=?, luontipaivays=?, ryhma=? where kayttajaID=?";
+            String SQL = "update kayttajat set etunimi=?, sukunimi=?, email=?, kayttajatunnus=?, salasana=?, puhelin=?, luontipaivays=?, ryhma=? where kayttajaID=?";
             lisayslause = yhteys.prepareStatement(SQL);
             lisayslause.setString(1, etunimi);
             lisayslause.setString(2, sukunimi);
@@ -387,6 +387,7 @@ public class Tietovarasto {
             lisayslause.setString(6, puhelin);
             lisayslause.setString(7, luontipaivays);
             lisayslause.setString(8, ryhma);
+            lisayslause.setInt(9, kayttajaID);
             
             return lisayslause.executeUpdate() > 0;
 
@@ -430,6 +431,7 @@ public class Tietovarasto {
     }
     
     public boolean poistaKayttaja(int kayttajaID) {
+        poistaAloite(kayttajaID);
         Connection yhteys = null;
         PreparedStatement hakulause = null;
 

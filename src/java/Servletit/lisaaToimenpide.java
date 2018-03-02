@@ -44,6 +44,7 @@ public class lisaaToimenpide extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
 
+        //int kayttajaID = Integer.parseInt(request.getParameter("kayttajaID"));
         String Kuvaus = request.getParameter("Kuvaus");
         String pvm = sdf.format(date);
         String aloiteID = request.getParameter("aloiteID");

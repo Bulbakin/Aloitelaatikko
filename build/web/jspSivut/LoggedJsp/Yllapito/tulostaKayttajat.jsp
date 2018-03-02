@@ -63,7 +63,7 @@
                 text-align: left !important;
             }
         </style>
-        <title>Aloitteiden Haku</title>
+        <title>Käyttäjälista</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     </head>
     <body>
@@ -71,7 +71,7 @@
             Tietovarasto tietovarasto = new Tietovarasto();
         %>
         <div class="container">
-            <h1>Kaikki aloitteet</h1>
+            <h1>Kaikki Käyttäjät</h1>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead class="thead-dark">

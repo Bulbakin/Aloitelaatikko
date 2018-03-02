@@ -45,7 +45,7 @@
         %>
         <div class="container">
             <h1>Muokkaa aloitetta</h1>
-            <form name="lisays" action="/Aloitelaatikko_ver2/muokkaaKayttaja" method="post">
+            <form name="muokkaa" action="/Aloitelaatikko_ver2/muokkaaKayttaja">
                 <input type="text" class="" name="kayttajaID" readonly value="<%=kayttajaID%>"><br>
                 <input type="text" class="" name="etunimi" value="<%=etunimi%>"><br>
                 <input type="text" class="" name="sukunimi" value="<%=sukunimi%>"><br>
@@ -56,10 +56,11 @@
                 <input type="text" class="" name="luontipaivays" readonly value="<%=luontipaivays%>"><br>
                 <input type="text" class="" name="ryhma" value="<%=ryhma%>"><br>
                 
-                <input class="btn btn-warning" type="submit" value="Muokkaa" <% tietovarasto.muokkaaKayttaja(Integer.parseInt(kayttajaID), etunimi, sukunimi, email, kayttajatunnus, salasana, puhelin, luontipaivays, ryhma);%>>
+                <input type="submit" class="btn btn-warning" name="muokkaa" value="Muokkaa">
             </form>
-            <form name="lisays" action="../Yllapito/tulostaKayttajat.jsp" method="post">
-                <input class="btn btn-danger" type="submit" value="Poista" <% tietovarasto.poistaKayttaja(Integer.parseInt(kayttajaID));%>>
+            <form name="poista" action="/Aloitelaatikko_ver2/poistaKayttaja">
+                <input type="hidden" class="" name="kayttajaID" readonly value="<%=kayttajaID%>"><br>
+                <input type="submit" class="btn btn-danger" name="poista" value="Poista">
             </form>
         </div>
     </body>

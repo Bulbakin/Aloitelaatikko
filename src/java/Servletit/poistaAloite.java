@@ -66,18 +66,18 @@ public class poistaAloite extends HttpServlet {
             out.println("<title>Aloitteen poistaminen</title>");
             out.println("</head>");
             out.println("<body>");
+            out.println("<h2>Sivu uudelleenohjataan 5 sekunnin kuluttua</h2>");
+            out.println("</body>");
+            out.println("</html>");
             
-
+            tietovarasto.poistaAloite(Integer.parseInt(aloiteID));
+            
             if (tietovarasto.poistaAloite(Integer.parseInt(aloiteID))) {
                 out.println("<h1>Poistaminen onnistui</h1>");
-                out.println("<h2>Sivu uudelleenohjataan 5 sekunnin kuluttua</h2>");
 
             } else {
                 out.println("<h2>Poisto epäonnistui</h2>");
             }
-
-            out.println("</body>");
-            out.println("</html>");
         }
 
     }

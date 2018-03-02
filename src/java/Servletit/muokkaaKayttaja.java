@@ -75,6 +75,8 @@ public class muokkaaKayttaja extends HttpServlet {
             out.println("<h2>Sivu uudelleenohjataan 5 sekunnin kuluttua</h2>");
             out.println("</body>");
             out.println("</html>");
+            
+            tietovarasto.muokkaaKayttaja(Integer.parseInt(kayttajaID), etunimi, sukunimi, email, kayttajatunnus, salasana, puhelin, luontipaivays, ryhma);
 
             if (tietovarasto.muokkaaKayttaja(Integer.parseInt(kayttajaID), etunimi, sukunimi, email, kayttajatunnus, salasana, puhelin, luontipaivays, ryhma)) {
                 out.println("<h2>Muokkaaminen onnistui</h2>");

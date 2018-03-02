@@ -46,10 +46,12 @@ public class index extends HttpServlet {
 
             if (tietovarasto.haeKayttaja(username, salasana)) {
                 String ryhma = tietovarasto.getRyhma();
+                int kayttajaID = tietovarasto.getKayttajaID();
                 HttpSession session = request.getSession();
                 // Sessio vanhentuu tunnin kuluessa (60*60s)
                 session.setMaxInactiveInterval(60 * 60);
                 session.setAttribute("ryhma", ryhma);
+                session.setAttribute("kayttajaID", kayttajaID);
                 session.setAttribute("knimi", username);
                 if (Tietovarasto.haeRyhma().equals("Yllapito")) {
                     response.sendRedirect("jspSivut/LoggedJsp/Yllapito/etusivuYllapito.jsp");

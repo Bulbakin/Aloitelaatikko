@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "muokkaaAloitetta", urlPatterns = {"/muokkaaAloitetta"})
 public class muokkaaAloitetta extends HttpServlet {
-    
+
     private Tietovarasto tietovarasto = new Tietovarasto();
 
     /**
@@ -37,7 +37,7 @@ public class muokkaaAloitetta extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
-        
+
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             String aloiteID = request.getParameter("aloiteID");
@@ -69,6 +69,8 @@ public class muokkaaAloitetta extends HttpServlet {
             out.println("<h2>Sivu uudelleenohjataan 5 sekunnin kuluttua</h2>");
             out.println("</body>");
             out.println("</html>");
+
+            tietovarasto.aloitteenMuokkaaminen(Integer.parseInt(aloiteID), aloitenimi, aloitekuvaus);
 
             if (tietovarasto.aloitteenMuokkaaminen(Integer.parseInt(aloiteID), aloitenimi, aloitekuvaus)) {
                 out.println("<h2>Muokkaaminen onnistui</h2>");
