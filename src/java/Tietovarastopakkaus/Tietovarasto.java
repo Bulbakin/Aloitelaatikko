@@ -30,7 +30,7 @@ public class Tietovarasto {
     public String getRyhma() {
         return naapuri.getRyhma();
     }
-    
+
     public static int getKayttajaID() {
         return naapuri.getKayttajaID();
     }
@@ -38,11 +38,11 @@ public class Tietovarasto {
     public static String getVaihe() {
         return vaihe;
     }
-    
+
     public static boolean getLogin() {
         return login;
     }
-    
+
     public static void setLogin(boolean login) {
         Tietovarasto.login = login;
 
@@ -247,7 +247,7 @@ public class Tietovarasto {
         }
         return aloitteet;
     }
-    
+
     public List<Kayttaja> haeKaikkiKayttajat() {
         List<Kayttaja> kayttajat = new ArrayList<Kayttaja>();
 
@@ -367,7 +367,7 @@ public class Tietovarasto {
             YhteydenHallinta.suljeYhteys(yhteys);
         }
     }
-    
+
     public boolean muokkaaKayttaja(int kayttajaID, String etunimi, String sukunimi, String email, String kayttajatunnus, String salasana, String puhelin, String luontipaivays, String ryhma) {
         Connection yhteys = null;
         PreparedStatement lisayslause = null;
@@ -388,7 +388,7 @@ public class Tietovarasto {
             lisayslause.setString(7, luontipaivays);
             lisayslause.setString(8, ryhma);
             lisayslause.setInt(9, kayttajaID);
-            
+
             return lisayslause.executeUpdate() > 0;
 
         } catch (SQLException ex) {
@@ -429,9 +429,47 @@ public class Tietovarasto {
             YhteydenHallinta.suljeYhteys(yhteys);
         }
     }
-    
+
+    public boolean poistaKayttajanAloiteet(int kayttajaID) {
+        Connection yhteys = null;
+        PreparedStatement hakulause = null;
+        ResultSet tulosjoukko = null;
+
+        try {
+            yhteys = YhteydenHallinta.avaaYhteys(ajuri, url, kayttajatunnus, salasana);
+            if (yhteys == null) {
+                return false;
+            }
+            String haeAloiteID = "select aloiteID from aloitteet where kayttajaID=?";
+            hakulause = yhteys.prepareStatement(haeAloiteID);
+
+            hakulause.setInt(1, kayttajaID);
+            tulosjoukko = hakulause.executeQuery();
+
+            while (tulosjoukko.next()) {
+                int aloiteID = Integer.parseInt(tulosjoukko.getString("aloiteID"));
+                poistaToimenpide(aloiteID);
+            }
+
+            String poistaAloiteSQL = "delete from aloitteet where kayttajaID=?";
+            hakulause = yhteys.prepareStatement(poistaAloiteSQL);
+
+            hakulause.setInt(1, kayttajaID);
+            return hakulause.executeUpdate() > 0;
+
+        } catch (SQLException ex) {
+            // Jos tuli virhe, niin hypätään tänne
+            ex.printStackTrace();
+            return false;
+        } finally {
+            // Suljetaan yhteysx tietokantaa
+            YhteydenHallinta.suljeLause(hakulause);
+            YhteydenHallinta.suljeYhteys(yhteys);
+        }
+    }
+
     public boolean poistaKayttaja(int kayttajaID) {
-        poistaAloite(kayttajaID);
+        poistaKayttajanAloiteet(kayttajaID);
         Connection yhteys = null;
         PreparedStatement hakulause = null;
 
