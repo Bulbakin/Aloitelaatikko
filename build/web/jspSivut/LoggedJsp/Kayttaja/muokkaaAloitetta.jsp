@@ -26,7 +26,7 @@
             }
         </style>
         <title>Muokkaa aloitetta</title>
-        <link rel="shortcut icon" href="Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
     </head>
     <body>
         <%

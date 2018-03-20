@@ -63,7 +63,7 @@
             }
         </style>
         <title>Aloitteiden Haku</title>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
     </head>
     <body>
         <%
@@ -80,7 +80,6 @@
                             <th class="thKuvaus">Kuvaus</th>
                             <th class="thPVM">Pvm</th>
                             <th class="thKayttajaID">KäyttäjäID</th>
-                            <th class="thPoista">Poista</th>
                             <th class="vaihe">Vaihe</th>
                         </tr>
                     </thead>
@@ -91,42 +90,43 @@
                         %>
                         <tr>
                             <td><%= aloite.getAloiteID()%></td>
-                            <% if (!tietovarasto.toimenpideTehty(aloite.getAloiteID())) {%>
+                            <%
+                                if (session.getAttribute("ryhma").equals("Ohjausryhma")) {
+                                    if (!tietovarasto.toimenpideTehty(aloite.getAloiteID())) {%>
                             <td class="tdNimi"><a href="lisaaToimenpide.jsp?aloiteID=<%=aloite.getAloiteID()%>&aloitekuvaus=<%= aloite.getAloitekuvaus()%>"><%=aloite.getAloitenimi()%></a></td>
-                                <%} else {%>
+                                <% } else {%>
                             <td class="tdNimi"><%=aloite.getAloitenimi()%></td>
-                            <% }%>
+                            <% }
+                            } else {%>
+                            <td class="tdNimi"><%=aloite.getAloitenimi()%></td>
+                            <% }%> 
                             <td class="tdKuvaus"><%= aloite.getAloitekuvaus()%></td>
                             <td><%= aloite.getPvm()%></td>
                             <td><%= aloite.getKayttajaID()%></td>
-                            <td>
-                                <form name="lisays" action='../../Aloitelaatikko_ver2/jspSivut/poistaAloite.jsp?aloiteID=<%=aloite.getAloiteID()%>&aloitenimi=<%=aloite.getAloitenimi()%>&aloitekuvaus=<%=aloite.getAloitekuvaus()%>&pvm=<%= aloite.getPvm()%>' method="post">
-                                    <input class="btn btn-danger" type="submit" value="X" name="delete">
-                                </form>
-                            </td>
-                                <% if (tietovarasto.toimenpideTehty(aloite.getAloiteID())) {%>
-                                <%
-                                    vaihe = Tietovarasto.getVaihe();
-                                    if (vaihe.equals("1")) {
-                                %>
+                            <% if (tietovarasto.toimenpideTehty(aloite.getAloiteID())) {%>
+                            <%
+                                vaihe = Tietovarasto.getVaihe();
+                                if (vaihe.equals("1")) {
+                            %>
                             <td>-</td>
                             <%
                             } else if (vaihe.equals("2")) {
                             %>
-                    <td>Huomioitu</td>
-                    <%
-                    } else if (vaihe.equals("3")) {
-                    %>
-                    <td>Työn alla</td>
-                    <%
-                    } else {
-                    %>
-                    <td>Työn alla</td>
-                    <% } %>
-                    </tr>
-                    <% } else { %>
+                            <td>Huomioitu</td>
+                            <%
+                            } else if (vaihe.equals("3")) {
+                            %>
+                            <td>Työn alla</td>
+                            <%
+                            } else {
+                            %>
+                            <td>Työn alla</td>
+                            <% } %>
+                        </tr>
+                        <% } else { %>
                     <td>-</td>
-                    <% } } %>
+                    <% }
+                        }%>
                     </tbody>
                 </table>
             </div>

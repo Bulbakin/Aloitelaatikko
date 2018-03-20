@@ -15,17 +15,17 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
-        <link href="../CSS/signin.css" rel="stylesheet" type="text/css"/>
-        <link href="../CSS/style3.css" rel="stylesheet" type="text/css"/>
+        <link href="/Aloitelaatikko_ver2/CSS/signin.css" rel="stylesheet" type="text/css"/>
+        <link href="/Aloitelaatikko_ver2/CSS/style3.css" rel="stylesheet" type="text/css"/>
 
         <title>Ohjausryhmän etusivu</title>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
 
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark">
             <!-- Brand -->
-            <a href="#" class="navbar-brand"><img src="pahvilaatikko2.png"></a>
+            <a href="#" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
             <a class="navbar-brand" href="etusivuOhjausryhma.jsp">Aloitelaatikko</a>
             
             <ul class="navbar-nav">
@@ -34,6 +34,10 @@
                 </li>
             </ul>
         </nav>
-        <h1></h1>
+        
+        <form class="formStyle" name="tulostaKaikkiAloitteet" action="../Kayttaja/tulostaAloitteet.jsp">
+            <input type="submit" class="btn btn-primary btnSize" value="Kaikki Aloitteet" name="tulostaKaikkiAloitteet">
+        </form>
+        
     </body>
 </html>

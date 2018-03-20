@@ -29,38 +29,42 @@
             .thAloiteID {
                 width: 5%;
             }
-            
+
             .thNimi {
                 width: 15%;
             }
-            
+
             .thKuvaus {
-                width: 50%;
+                width: 45%;
             }
-            
+
             .thPVM {
                 width: 10%;
             }
-            
+
             .thKayttajaID {
                 width: 5%;
             }
-            
+
+            .thVaihe {
+                width: 5%;
+            }
+
             .thMuokkaa {
                 width: 5%
             }
-            
+
             .tdKuvaus {
                 text-align: left !important;
             }
-            
+
             .tdNimi {
                 text-align: left !important;
             }
 
         </style>
         <title>Aloitteiden haku</title>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
     </head>
     <body>
         <%
@@ -77,31 +81,54 @@
                             <th class="th thKuvaus">Kuvaus</th>
                             <th class="th thPVM">pvm</th>
                             <th class="th thKayttajaID">KäyttäjäID</th>
+                            <th class="th thvaihe">Vaihe</th>
                             <th class="th thMuokkaa">Muokkaa</th>
                         </tr>
                     </thead>
                     <tbody>
                         <%
+                            String vaihe = "";
                             for (Aloite aloite : tietovarasto.haeKaikkiAloitteet()) {
+                                int kayttajaid = (Integer) session.getAttribute("kayttajaID");
+                                if (aloite.getKayttajaID() == kayttajaid) {
                         %>
                         <tr>
-
                             <td><%= aloite.getAloiteID()%></td>
                             <td class="tdNimi"><%= aloite.getAloitenimi()%></td>
                             <td class="tdKuvaus"><%= aloite.getAloitekuvaus()%></td>
                             <td><%= aloite.getPvm()%></td>
                             <td><%= aloite.getKayttajaID()%></td>
+
+                            <% if (tietovarasto.toimenpideTehty(aloite.getAloiteID())) {%>
                             <%
-                                int kayttajaid = (Integer) session.getAttribute("kayttajaID");
-                                if (aloite.getKayttajaID() == kayttajaid) {
+                                vaihe = Tietovarasto.getVaihe();
+                                if (vaihe.equals("1")) {
                             %>
+                            <td>-</td>
+                            <%
+                            } else if (vaihe.equals("2")) {
+                            %>
+                            <td>Huomioitu</td>
+                            <%
+                            } else if (vaihe.equals("3")) {
+                            %>
+                            <td>Työn alla</td>
+                            <%
+                            } else {
+                            %>
+                            <td>Työn alla</td>
+                            <% } %>
+                            <% } else { %>
+                            <td>-</td>
+                            <% }%>
                             <td>
                                 <form name="lisays" action='muokkaaAloitetta.jsp?aloiteID=<%=aloite.getAloiteID()%>&aloitenimi=<%=aloite.getAloitenimi()%>&aloitekuvaus=<%=aloite.getAloitekuvaus()%>' method="post">
                                     <input class="btn btn-warning muokkaa-btn" type="submit" value=">" name="muokkaa">
                                 </form>
                             </td>
                         </tr>
-                        <%} }%>
+                        <% }
+                            }%>
                     </tbody>
                 </table>
             </div>

@@ -14,11 +14,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
-        <link href="../CSS/signin.css" rel="stylesheet" type="text/css"/>
-        <link href="../CSS/style3.css" rel="stylesheet" type="text/css"/>
+        <link href="/Aloitelaatikko_ver2/CSS/signin.css" rel="stylesheet" type="text/css"/>
+        <link href="/Aloitelaatikko_ver2/CSS/style3.css" rel="stylesheet" type="text/css"/>
         <style>
             body {
-                background-image: url("../jspSivut/spagettikissav2.jpg");
+                background-image: url("/Aloitelaatikko_ver2/jspSivut/spagettikissav2.jpg");
                 background-size: cover;
                 color: black;
                 text-align: center;
@@ -35,12 +35,12 @@
         </style>
 
         <title>Käyttäjän etusivu</title>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark">
             <!-- Brand -->
-            <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="pahvilaatikko2.png"></a>
+            <a href="etusivuKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
             <a class="navbar-brand" href="etusivuKayttaja.jsp">Aloitelaatikko</a>
 
             <ul class="navbar-nav">
@@ -49,19 +49,20 @@
                 </li>
             </ul>
         </nav>
-        <h1></h1>
-        <form class="formStyle" name="lisays" action="lisaaAloite.jsp">
+        <form class="formStyle" name="lisaaAloite" action="lisaaAloite.jsp">
             <input type="submit" class="btn btn-primary btnSize" value="Lisää aloite" name="submit">
         </form>
 
-        <form class="formStyle" name="lisays" action="tulostaAloitteetKayttaja.jsp">
-            <input type="submit" class="btn btn-primary btnSize" value="Kaikki aloitteet" name="tulostaAloitteet">
-        </form>
-
-        <form class="formStyle" name="lisays" action="jspSivut/index.jsp">
-            <input type="submit" class="btn btn-primary btnSize" value="Kirjaudu ulos" name="kirjauduUlos">
+        <form class="formStyle" name="tulostaAloitteet" action="tulostaAloitteetKayttaja.jsp">
+            <input type="submit" class="btn btn-primary btnSize" value="Omat Aloitteet" name="tulostaAloitteet">
         </form>
         
-        <h1> ryhmä: <%= session.getAttribute("ryhma") %> </h1>
+        <form class="formStyle" name="tulostaKaikkiAloitteet" action="tulostaAloitteet.jsp">
+            <input type="submit" class="btn btn-primary btnSize" value="Kaikki Aloitteet" name="tulostaKaikkiAloitteet">
+        </form>
+
+        <form class="formStyle" name="kirjauduUlos" action="/Aloitelaatikko_ver2/jspSivut/index.jsp">
+            <input type="submit" class="btn btn-primary btnSize" value="Kirjaudu ulos" name="kirjauduUlos">
+        </form>
     </body>
 </html>

@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Toimenpiteen kirjaaminen</title>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
     </head>
     <body>
         <h1>Toimenpiteen kirjaaminen</h1>
@@ -23,7 +23,7 @@
             String aloitekuvaus = request.getParameter("aloitekuvaus");
         %>
         <p>Aloitteen kuvaus: <%=aloitekuvaus%></p>
-        <form name="lisays" action="../../Aloitelaatikko_ver2/lisaaToimenpide" method="post">
+        <form name="lisays" action="/Aloitelaatikko_ver2/lisaaToimenpide" method="post">
             Toimenpide:<br>
             <textarea rows="10" cols="40" name="Kuvaus" placeholder="Kuvaus"></textarea><br>
             <select class="form-control" name="vaihe">

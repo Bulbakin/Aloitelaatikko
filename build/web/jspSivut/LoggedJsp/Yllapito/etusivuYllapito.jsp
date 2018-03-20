@@ -14,8 +14,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
-        <link href="../CSS/signin.css" rel="stylesheet" type="text/css"/>
-        <link href="../CSS/style3.css" rel="stylesheet" type="text/css"/>
+        <link href="/Aloitelaatikko_ver2/CSS/signin.css" rel="stylesheet" type="text/css"/>
+        <link href="/Aloitelaatikko_ver2/CSS/style3.css" rel="stylesheet" type="text/css"/>
         <style>
             body {
                 background-image: url("../jspSivut/spagettikissav2.jpg");
@@ -35,12 +35,12 @@
         </style>
 
         <title>Ylläpidon etusivu</title>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark">
             <!-- Brand -->
-            <a href="etusivuYllapito.jsp" class="navbar-brand"><img src="pahvilaatikko2.png"></a>
+            <a href="etusivuYllapito.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
             <a class="navbar-brand" href="etusivuYllapito.jsp">Aloitelaatikko</a>
 
             <ul class="navbar-nav">
