@@ -50,16 +50,18 @@
             </ul>
         </nav>
         <h1></h1>
-        <form class="formStyle" name="lisays" action="lisaaAloite.jsp" method="post">
+        <form class="formStyle" name="lisays" action="lisaaAloite.jsp">
             <input type="submit" class="btn btn-primary btnSize" value="Lisää aloite" name="submit">
         </form>
 
-        <form class="formStyle" name="lisays" action="tulostaAloitteetKayttaja.jsp" method="post">
+        <form class="formStyle" name="lisays" action="tulostaAloitteetKayttaja.jsp">
             <input type="submit" class="btn btn-primary btnSize" value="Kaikki aloitteet" name="tulostaAloitteet">
         </form>
 
-        <form class="formStyle" name="lisays" action="jspSivut/index.jsp" method="post">
+        <form class="formStyle" name="lisays" action="jspSivut/index.jsp">
             <input type="submit" class="btn btn-primary btnSize" value="Kirjaudu ulos" name="kirjauduUlos">
         </form>
+        
+        <h1> ryhmä: <%= session.getAttribute("ryhma") %> </h1>
     </body>
 </html>

@@ -70,11 +70,8 @@ public class poistaKayttaja extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
 
-            tietovarasto.poistaKayttaja(Integer.parseInt(kayttajaID));
-
             if (tietovarasto.poistaKayttaja(Integer.parseInt(kayttajaID))) {
                 out.println("<h1>Poistaminen onnistui</h1>");
-
             } else {
                 out.println("<h2>Poisto epäonnistui</h2>");
             }

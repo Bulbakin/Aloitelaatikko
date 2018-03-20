@@ -95,8 +95,8 @@
                         <tr>
                             <td><%= kayttaja.getKayttajaID()%></td>
                             <td><%= kayttaja.getEtunimi()%></td>
-                            <td ><%= kayttaja.getSukunimi()%></td>
-                            <td ><%= kayttaja.getEmail()%></td>
+                            <td><%= kayttaja.getSukunimi()%></td>
+                            <td><%= kayttaja.getEmail()%></td>
                             <td><%= kayttaja.getKayttajatunnus()%></td>
                             <td><%= kayttaja.getSalasana()%></td>
                             <td><%= kayttaja.getPuhelin()%></td>
@@ -108,7 +108,7 @@
                                 </form>
                             </td>
                         </tr>
-                        <% } %>
+                        <% }%>
                 </table>
             </div>
         </div>

@@ -3,25 +3,32 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/src/java/Tietovarastopakkaus/Tietovarasto.java</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Kayttaja/etusivuKayttaja.jsp</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/src/java/Servletit/poistaKayttaja.java</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/src/java/Servletit/muokkaaAloitetta.java</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/src/java/Servletit/lisaaAloite.java</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/src/java/Servletit/lisaaToimenpide.java</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/web/jspSivut/index.jsp</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/src/java/Tietovarastopakkaus/Aloite.java</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/src/java/Servletit/poistaAloite.java</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Ohjausryhma/tulostaAloitteet.jsp</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Kayttaja/tulostaAloitteetKayttaja.jsp</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Yllapito/muokkaaKayttaja.jsp</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/src/java/Tietovarastopakkaus/Kayttaja.java</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Ohjausryhma/etusivuOhjausryhma.jsp</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Yllapito/tulostaKayttajat.jsp</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Yllapito/etusivuYllapito.jsp</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/src/java/Servletit/muokkaaKayttaja.java</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Kayttaja/poistaAloite.jsp</file>
-            <file>file:/C:/Users/Julius%20Kinnarinen/Desktop/GitProjects/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Kayttaja/muokkaaAloitetta.jsp</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/src/java/Servletit/poistaKayttaja.java</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Ohjausryhma/tulostaAloitteet.jsp</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Kayttaja/etusivuKayttaja.jsp</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Yllapito/tulostaKayttajat.jsp</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Kayttaja/muokkaaAloitetta.jsp</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/src/java/Filterit/OhjausryhmaFilter.java</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/src/java/Servletit/muokkaaKayttaja.java</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/src/java/Servletit/index.java</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/src/java/Tietovarastopakkaus/Tietovarasto.java</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Yllapito/lisaaKayttaja.jsp</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Ohjausryhma/etusivuOhjausryhma.jsp</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Yllapito/etusivuYllapito.jsp</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Kayttaja/lisaaAloite.jsp</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Yllapito/muokkaaKayttaja.jsp</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/src/java/Servletit/lisaaToimenpide.java</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/web/jspSivut/index.jsp</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/src/java/Servletit/muokkaaAloitetta.java</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/src/java/Filterit/YllapitoFilter.java</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/src/java/Tietovarastopakkaus/Kayttaja.java</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/src/java/Filterit/LoginFilter.java</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/src/java/Servletit/lisaaAloite.java</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Ohjausryhma/lisaaToimenpide.jsp</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Kayttaja/poistaAloite.jsp</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/src/java/Filterit/KayttajaFilter.java</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/src/java/Servletit/poistaAloite.java</file>
+            <file>file:/C:/Users/s1601382/Desktop/Aloitelaatikko_ver2/web/jspSivut/LoggedJsp/Kayttaja/tulostaAloitteetKayttaja.jsp</file>
         </group>
     </open-files>
 </project-private>

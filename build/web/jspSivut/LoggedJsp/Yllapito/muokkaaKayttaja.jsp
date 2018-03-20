@@ -44,7 +44,7 @@
             
         %>
         <div class="container">
-            <h1>Muokkaa aloitetta</h1>
+            <h1>Muokkaa Käyttäjätietoja</h1>
             <form name="muokkaa" action="/Aloitelaatikko_ver2/muokkaaKayttaja">
                 <input type="text" class="" name="kayttajaID" readonly value="<%=kayttajaID%>"><br>
                 <input type="text" class="" name="etunimi" value="<%=etunimi%>"><br>

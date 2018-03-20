@@ -42,8 +42,6 @@ public class YllapitoFilter implements Filter {
             throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) Srequest;
         HttpServletResponse response = (HttpServletResponse) Sresponse;
-        String uri = request.getRequestURI();
-        System.out.println(uri);
 
         HttpSession session = request.getSession();
 

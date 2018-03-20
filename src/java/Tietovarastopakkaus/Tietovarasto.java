@@ -430,46 +430,7 @@ public class Tietovarasto {
         }
     }
 
-    public boolean poistaKayttajanAloiteet(int kayttajaID) {
-        Connection yhteys = null;
-        PreparedStatement hakulause = null;
-        ResultSet tulosjoukko = null;
-
-        try {
-            yhteys = YhteydenHallinta.avaaYhteys(ajuri, url, kayttajatunnus, salasana);
-            if (yhteys == null) {
-                return false;
-            }
-            String haeAloiteID = "select aloiteID from aloitteet where kayttajaID=?";
-            hakulause = yhteys.prepareStatement(haeAloiteID);
-
-            hakulause.setInt(1, kayttajaID);
-            tulosjoukko = hakulause.executeQuery();
-
-            while (tulosjoukko.next()) {
-                int aloiteID = Integer.parseInt(tulosjoukko.getString("aloiteID"));
-                poistaToimenpide(aloiteID);
-            }
-
-            String poistaAloiteSQL = "delete from aloitteet where kayttajaID=?";
-            hakulause = yhteys.prepareStatement(poistaAloiteSQL);
-
-            hakulause.setInt(1, kayttajaID);
-            return hakulause.executeUpdate() > 0;
-
-        } catch (SQLException ex) {
-            // Jos tuli virhe, niin hypätään tänne
-            ex.printStackTrace();
-            return false;
-        } finally {
-            // Suljetaan yhteysx tietokantaa
-            YhteydenHallinta.suljeLause(hakulause);
-            YhteydenHallinta.suljeYhteys(yhteys);
-        }
-    }
-
     public boolean poistaKayttaja(int kayttajaID) {
-        poistaKayttajanAloiteet(kayttajaID);
         Connection yhteys = null;
         PreparedStatement hakulause = null;
 

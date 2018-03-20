@@ -91,13 +91,17 @@
                             <td class="tdKuvaus"><%= aloite.getAloitekuvaus()%></td>
                             <td><%= aloite.getPvm()%></td>
                             <td><%= aloite.getKayttajaID()%></td>
+                            <%
+                                int kayttajaid = (Integer) session.getAttribute("kayttajaID");
+                                if (aloite.getKayttajaID() == kayttajaid) {
+                            %>
                             <td>
                                 <form name="lisays" action='muokkaaAloitetta.jsp?aloiteID=<%=aloite.getAloiteID()%>&aloitenimi=<%=aloite.getAloitenimi()%>&aloitekuvaus=<%=aloite.getAloitekuvaus()%>' method="post">
                                     <input class="btn btn-warning muokkaa-btn" type="submit" value=">" name="muokkaa">
                                 </form>
                             </td>
                         </tr>
-                        <%}%>
+                        <%} }%>
                     </tbody>
                 </table>
             </div>

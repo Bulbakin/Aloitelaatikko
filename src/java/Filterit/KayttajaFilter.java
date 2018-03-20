@@ -42,12 +42,10 @@ public class KayttajaFilter implements Filter {
             throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) Srequest;
         HttpServletResponse response = (HttpServletResponse) Sresponse;
-        String uri = request.getRequestURI();
-        System.out.println(uri);
 
         HttpSession session = request.getSession();
 
-        if (session.getAttribute("ryhma").equals("Kayttaja") || session.getAttribute("ryhma").equals("Yllapito")) {
+        if (session.getAttribute("ryhma").equals("Kayttaja") || session.getAttribute("ryhma").equals("Yllapito") || session.getAttribute("ryhma").equals("Ohjausryhma")) {
             chain.doFilter(Srequest, response);
         } else {
             response.sendRedirect("../index.jsp");
