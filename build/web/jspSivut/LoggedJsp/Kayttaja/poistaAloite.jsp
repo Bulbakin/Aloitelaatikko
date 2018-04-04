@@ -13,10 +13,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+        <link href="/Aloitelaatikko_ver2/CSS/signin.css" rel="stylesheet" type="text/css"/>
+        <link href="/Aloitelaatikko_ver2/CSS/style3.css" rel="stylesheet" type="text/css"/>
         <style>
             body {
                 background-color: #14cad4;
                 color: black;
+                font-family: Comic Sans, cursive;
             }
 
             table {
@@ -28,13 +32,24 @@
         <link rel="shortcut icon" href="/Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
     </head>
     <body>
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <!-- Brand/logo -->
+            <a href="poistaAloite.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
+            <a class="navbar-brand" href="poistaAloite.jsp">Aloitelaatikko</a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../Kayttaja/etusivuKayttaja.jsp">Palaa etusivulle</a>
+                </li>
+            </ul>
+        </nav>
         <%
             Tietovarasto tietovarasto = new Tietovarasto();
 
             String aloiteID = request.getParameter("aloiteID");
             String aloiteNimi = request.getParameter("aloitenimi");
             String aloiteKuvaus = request.getParameter("aloitekuvaus");
-            String pvm = request.getParameter("pvm");
+            String pvm = request.getParameter("aloitePVM");
         %>
         <div class="container">
             <h1>Poista aloite</h1>
@@ -57,11 +72,15 @@
                         </tr>
                     </tbody>
                 </table>
-                <form name="lisays" action="../../Aloitelaatikko_ver2/poistaAloite" method="post">
+                <form name="lisays" action="/Aloitelaatikko_ver2/poistaAloite" method="post">
                     <input type="submit" class="btn btn-danger" name="submit" value="Poista">
                     <input type="hidden" name="aloiteID" value='<%=aloiteID%>'>
                 </form>
             </div>
         </div>
+
+        <footer class="container-fluid footer text-center fixed-bottom">
+            <p>Aloitelaatikko Made By Julius Kinnarinen (&copy;)</p>
+        </footer>
     </body>
 </html>

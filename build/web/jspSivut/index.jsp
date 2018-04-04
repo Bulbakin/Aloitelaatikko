@@ -17,6 +17,12 @@
 
         <link href="../CSS/signin.css" rel="stylesheet" type="text/css"/>
         <link href="../CSS/style3.css" rel="stylesheet" type="text/css"/>
+        
+        <style>
+            body{
+                font-family: Comic Sans, cursive;
+            }
+        </style>
 
         <title>Aloitelaatikko</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">

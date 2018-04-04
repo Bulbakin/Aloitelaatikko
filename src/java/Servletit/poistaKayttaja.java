@@ -53,11 +53,12 @@ public class poistaKayttaja extends HttpServlet {
             out.println("<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\"></script>");
             out.println("<style>\n"
                     + "            body {\n"
-                    + "                background-image: url(\"jspSivut/spagettikissa.jpg\");\n"
+                    + "                background-image: url(\"jspSivut/spagettikissav3.jpg\");\n"
                     + "                background-size: cover;\n"
                     + "                color: black;\n"
                     + "                text-align: center;\n"
                     + "                padding: 70px;\n"
+                    + "                font-family: Comic Sans, cursive;\n"
                     + "            }\n"
                     + "        </style>");
             out.println("");
@@ -71,7 +72,7 @@ public class poistaKayttaja extends HttpServlet {
             out.println("</html>");
 
             if (tietovarasto.poistaKayttaja(Integer.parseInt(kayttajaID))) {
-                out.println("<h1>Poistaminen onnistui</h1>");
+                out.println("<h2>Poistaminen onnistui</h2>");
             } else {
                 out.println("<h2>Poisto epäonnistui</h2>");
             }

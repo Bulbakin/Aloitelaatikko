@@ -24,7 +24,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Julius Kinnarinen
  */
-@WebFilter(filterName = "YllapitoFilter", urlPatterns = {"/jspSivut/Yllapito/*"})
+@WebFilter(filterName = "YllapitoFilter", urlPatterns = {"/jspSivut/LoggedJsp/Yllapito/*"})
 public class YllapitoFilter implements Filter {
 
     private static final boolean debug = true;
@@ -48,7 +48,7 @@ public class YllapitoFilter implements Filter {
         if (session.getAttribute("ryhma").equals("Yllapito")) {
             chain.doFilter(Srequest, response);
         } else {
-            response.sendRedirect("../index.jsp");
+            response.sendRedirect("/Aloitelaatikko_ver2/jspSivut/index.jsp");
         }
     }
 

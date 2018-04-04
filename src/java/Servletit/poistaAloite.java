@@ -58,6 +58,7 @@ public class poistaAloite extends HttpServlet {
                     + "                color: black;\n"
                     + "                text-align: center;\n"
                     + "                padding: 70px;\n"
+                    + "                font-family: Comic Sans, cursive;\n"
                     + "            }\n"
                     + "        </style>");
             out.println("");
@@ -70,10 +71,8 @@ public class poistaAloite extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
             
-            tietovarasto.poistaAloite(Integer.parseInt(aloiteID));
-            
             if (tietovarasto.poistaAloite(Integer.parseInt(aloiteID))) {
-                out.println("<h1>Poistaminen onnistui</h1>");
+                out.println("<h2>Poistaminen onnistui</h2>");
 
             } else {
                 out.println("<h2>Poisto epäonnistui</h2>");

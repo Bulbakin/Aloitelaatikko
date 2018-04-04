@@ -18,10 +18,11 @@
         <link href="/Aloitelaatikko_ver2/CSS/style3.css" rel="stylesheet" type="text/css"/>
         <style>
             body {
-                background-image: url("../jspSivut/spagettikissav2.jpg");
+                background-image: url("/Aloitelaatikko_ver2/jspSivut/spagettikissav3.jpg");
                 background-size: cover;
                 color: black;
                 text-align: center;
+                font-family: Comic Sans, cursive;
             }
 
             .btnSize {
@@ -48,10 +49,17 @@
                     <a class="nav-link" href="#">Ota yhteyttä ylläpitoon</a>
                 </li>
             </ul>
-        </nav>
-        <h1></h1>
-        <form class="formStyle" name="lisays" action="tulostaKayttajat.jsp" method="post">
-            <input type="submit" class="btn btn-primary btnSize" value="Käyttäjätiedot" name="submit">
+        </nav><br>
+        <h2 style="color: white;">Tervetuloa: <%= session.getAttribute("knimi")%></h2><br>
+        <form class="formStyle" name="lisays" action="tulostaKayttajat.jsp">
+            <input type="submit" class="btn btn-primary btnSize" value="Kaikki Käyttäjät" name="submit">
         </form>
+        
+        <form class="formStyle" name="lisays" action="../Kayttaja/tulostaAloitteet.jsp">
+            <input type="submit" class="btn btn-primary btnSize" value="Kaikki Aloitteet" name="submit">
+        </form>
+        <footer class="container-fluid footer text-center fixed-bottom">
+            <p>Aloitelaatikko Made By Julius Kinnarinen (&copy;)</p>
+        </footer>
     </body>
 </html>

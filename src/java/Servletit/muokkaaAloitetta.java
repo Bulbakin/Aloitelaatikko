@@ -54,11 +54,12 @@ public class muokkaaAloitetta extends HttpServlet {
             out.println("<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\"></script>");
             out.println("<style>\n"
                     + "            body {\n"
-                    + "                background-image: url(\"jspSivut/spagettikissa.jpg\");\n"
+                    + "                background-image: url(\"jspSivut/spagettikissav2.jpg\");\n"
                     + "                background-size: cover;\n"
                     + "                color: black;\n"
                     + "                text-align: center;\n"
                     + "                padding: 70px;\n"
+                    + "                font-family: Comic Sans, cursive;\n"
                     + "            }\n"
                     + "        </style>");
             out.println("");
@@ -69,8 +70,6 @@ public class muokkaaAloitetta extends HttpServlet {
             out.println("<h2>Sivu uudelleenohjataan 5 sekunnin kuluttua</h2>");
             out.println("</body>");
             out.println("</html>");
-
-            tietovarasto.aloitteenMuokkaaminen(Integer.parseInt(aloiteID), aloitenimi, aloitekuvaus);
 
             if (tietovarasto.aloitteenMuokkaaminen(Integer.parseInt(aloiteID), aloitenimi, aloitekuvaus)) {
                 out.println("<h2>Muokkaaminen onnistui</h2>");

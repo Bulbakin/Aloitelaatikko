@@ -13,6 +13,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        
+        <link href="/Aloitelaatikko_ver2/CSS/signin.css" rel="stylesheet" type="text/css"/>
+        <link href="/Aloitelaatikko_ver2/CSS/style3.css" rel="stylesheet" type="text/css"/>
         <style>
             body {
                 background-image: url("spagettikissa.jpg");
@@ -20,6 +23,7 @@
                 color: black;
                 text-align: center;
                 padding: 70px;
+                font-family: Comic Sans, cursive;
             }
 
             div {
@@ -53,5 +57,9 @@
                 </form>
             </div>
         </div>
+
+        <footer class="container-fluid footer text-center fixed-bottom">
+            <p>Aloitelaatikko Made By Julius Kinnarinen (&copy;)</p>
+        </footer>
     </body>
 </html>

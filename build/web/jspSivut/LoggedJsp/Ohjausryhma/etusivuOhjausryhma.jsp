@@ -18,6 +18,25 @@
         <link href="/Aloitelaatikko_ver2/CSS/signin.css" rel="stylesheet" type="text/css"/>
         <link href="/Aloitelaatikko_ver2/CSS/style3.css" rel="stylesheet" type="text/css"/>
 
+        <style>
+            body {
+                background-image: url("/Aloitelaatikko_ver2/jspSivut/spagettikissav4.jpg");
+                background-size: cover;
+                color: black;
+                text-align: center;
+                font-family: Comic Sans, cursive;
+            }
+
+            .btnSize {
+                width: 300px;
+                height: 60px;
+            }
+
+            .formStyle {
+                margin-top: 10px;
+            }
+        </style>
+
         <title>Ohjausryhmän etusivu</title>
         <link rel="shortcut icon" href="/Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
 
@@ -27,17 +46,20 @@
             <!-- Brand -->
             <a href="#" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
             <a class="navbar-brand" href="etusivuOhjausryhma.jsp">Aloitelaatikko</a>
-            
+
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Ota yhteyttä ylläpitoon</a>
                 </li>
             </ul>
-        </nav>
-        
+        </nav><br>
+        <h2 style="color: white;">Tervetuloa: <%= session.getAttribute("knimi")%></h2><br>
         <form class="formStyle" name="tulostaKaikkiAloitteet" action="../Kayttaja/tulostaAloitteet.jsp">
             <input type="submit" class="btn btn-primary btnSize" value="Kaikki Aloitteet" name="tulostaKaikkiAloitteet">
         </form>
-        
+
+        <footer class="container-fluid footer text-center fixed-bottom">
+            <p>Aloitelaatikko Made By Julius Kinnarinen (&copy;)</p>
+        </footer>
     </body>
 </html>

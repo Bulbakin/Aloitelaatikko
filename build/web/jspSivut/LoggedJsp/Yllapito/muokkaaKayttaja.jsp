@@ -14,10 +14,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        
+        <link href="/Aloitelaatikko_ver2/CSS/signin.css" rel="stylesheet" type="text/css"/>
+        <link href="/Aloitelaatikko_ver2/CSS/style3.css" rel="stylesheet" type="text/css"/>
         <style>
             body {
                 background-color: #14cad4;
                 color: black;
+                font-family: Comic Sans, cursive;
             }
 
             table {
@@ -41,7 +45,7 @@
             String puhelin = request.getParameter("puhelin");
             String luontipaivays = request.getParameter("luontipaivays");
             String ryhma = request.getParameter("ryhma");
-            
+
         %>
         <div class="container">
             <h1>Muokkaa Käyttäjätietoja</h1>
@@ -55,7 +59,7 @@
                 <input type="text" class="" name="puhelin" value="<%=puhelin%>"><br>
                 <input type="text" class="" name="luontipaivays" readonly value="<%=luontipaivays%>"><br>
                 <input type="text" class="" name="ryhma" value="<%=ryhma%>"><br>
-                
+
                 <input type="submit" class="btn btn-warning" name="muokkaa" value="Muokkaa">
             </form>
             <form name="poista" action="/Aloitelaatikko_ver2/poistaKayttaja">
@@ -64,4 +68,8 @@
             </form>
         </div>
     </body>
+
+    <footer class="container-fluid footer text-center fixed-bottom">
+        <p>Aloitelaatikko Made By Julius Kinnarinen (&copy;)</p>
+    </footer>
 </html>

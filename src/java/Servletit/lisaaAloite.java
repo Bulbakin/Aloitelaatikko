@@ -54,15 +54,29 @@ public class lisaaAloite extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Aloitteen luonti</title>");
+            out.println("<meta http-equiv= \"refresh\" content=\"5; url= jspSivut/LoggedJsp/Kayttaja/tulostaAloitteetKayttaja.jsp\" />");
+            out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css\">");
+            out.println("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>");
+            out.println("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js\"></script>");
+            out.println("<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\"></script>");
+            out.println("<style>\n"
+                    + "            body {\n"
+                    + "                background-image: url(\"jspSivut/spagettikissav2.jpg\");\n"
+                    + "                background-size: cover;\n"
+                    + "                color: black;\n"
+                    + "                text-align: center;\n"
+                    + "                padding: 70px;\n"
+                    + "                font-family: Comic Sans, cursive;\n"
+                    + "            }\n"
+                    + "        </style>");
+            out.println("");
+            out.println("");
+            out.println("<title>Aloitteen muokkaaminen</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Aloitteen tiedot</h1>");
-
-            //out.println("KäyttäjäID: " + kayttajaID + "<br>");
-            out.println("Otsikko: " + aloitenimi + "<br>");
-            out.println("Kuvaus: " + aloitekuvaus + "<br>");
-            out.println("Pvm: " + pvm + "<br>");
+            out.println("<h2>Sivu uudelleenohjataan 5 sekunnin kuluttua</h2>");
+            out.println("</body>");
+            out.println("</html>");
 
             Aloite aloite = new Aloite(0, aloitenimi, aloitekuvaus, pvm, Tietovarasto.getKayttajaID());
 
@@ -73,9 +87,6 @@ public class lisaaAloite extends HttpServlet {
                 //Lisäys epäonnistui
                 out.println("<h2>Luonti epäonnistui</h2>");
             }
-
-            out.println("</body>");
-            out.println("</html>");
 
         }
     }

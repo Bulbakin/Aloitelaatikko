@@ -22,6 +22,7 @@
                 background-size: cover;
                 color: black;
                 text-align: center;
+                font-family: Comic Sans, cursive;
             }
 
             .btnSize {
@@ -48,7 +49,9 @@
                     <a class="nav-link" href="#">Ota yhteyttä ylläpitoon</a>
                 </li>
             </ul>
-        </nav>
+        </nav><br>
+        <h2 style="color: white;">Tervetuloa: <%= session.getAttribute("knimi")%></h2><br>
+
         <form class="formStyle" name="lisaaAloite" action="lisaaAloite.jsp">
             <input type="submit" class="btn btn-primary btnSize" value="Lisää aloite" name="submit">
         </form>
@@ -56,13 +59,17 @@
         <form class="formStyle" name="tulostaAloitteet" action="tulostaAloitteetKayttaja.jsp">
             <input type="submit" class="btn btn-primary btnSize" value="Omat Aloitteet" name="tulostaAloitteet">
         </form>
-        
+
         <form class="formStyle" name="tulostaKaikkiAloitteet" action="tulostaAloitteet.jsp">
             <input type="submit" class="btn btn-primary btnSize" value="Kaikki Aloitteet" name="tulostaKaikkiAloitteet">
-        </form>
+        </form><br>
 
         <form class="formStyle" name="kirjauduUlos" action="/Aloitelaatikko_ver2/jspSivut/index.jsp">
-            <input type="submit" class="btn btn-primary btnSize" value="Kirjaudu ulos" name="kirjauduUlos">
+            <input type="submit" class="btn btn-danger btnSize" value="Kirjaudu ulos" name="kirjauduUlos">
         </form>
+
+        <footer class="container-fluid footer text-center fixed-bottom">
+            <p>Aloitelaatikko Made By Julius Kinnarinen (&copy;)</p>
+        </footer>
     </body>
 </html>

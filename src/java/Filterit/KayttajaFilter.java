@@ -24,7 +24,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Julius Kinnarinen
  */
-@WebFilter(filterName = "KayttajaFilter", urlPatterns = {"/jspSivut/Kayttaja/*"})
+@WebFilter(filterName = "KayttajaFilter", urlPatterns = {"/jspSivut/LoggedJsp/Kayttaja/*"})
 public class KayttajaFilter implements Filter {
     
     private static final boolean debug = true;
@@ -48,7 +48,7 @@ public class KayttajaFilter implements Filter {
         if (session.getAttribute("ryhma").equals("Kayttaja") || session.getAttribute("ryhma").equals("Yllapito") || session.getAttribute("ryhma").equals("Ohjausryhma")) {
             chain.doFilter(Srequest, response);
         } else {
-            response.sendRedirect("../index.jsp");
+            response.sendRedirect("/Aloitelaatikko_ver2/jspSivut/index.jsp");
         }
     }
 
