@@ -59,17 +59,51 @@ p {
     padding-bottom: 0px;
 }
 
-.indexbody {
+.formStyle {
+    margin-top: 10px;
+}
+
+.indexBody {
     background-image: url("../jspSivut/spagettikissa.jpg");
     background-size: cover;
     color: black;
     text-align: center;
+    font-family: Comic Sans, cursive;
 }
 
-.indexDiv {
+.yllapitoBody {
+    background-image: url("/Aloitelaatikko_ver2/jspSivut/spagettikissav3.jpg");
+    background-size: cover;
+    color: black;
+    text-align: center;
+    font-family: Comic Sans, cursive;
+}
+
+.ohjausryhmaBody {
+    background-image: url("/Aloitelaatikko_ver2/jspSivut/spagettikissav4.jpg");
+    background-size: cover;
+    color: black;
+    text-align: center;
+    font-family: Comic Sans, cursive;
+}
+
+.kayttajaBody {
+    background-image: url("/Aloitelaatikko_ver2/jspSivut/spagettikissav2.jpg");
+    background-size: cover;
+    color: black;
+    text-align: center;
+    font-family: Comic Sans, cursive;
+}
+
+.customDiv {
     max-width: 330px;
     padding: 15px;
     margin: 0 auto;
+}
+
+.btnSize {
+    width: 300px;
+    height: 60px;
 }
 
 /* Alatunnisteen säädöt */

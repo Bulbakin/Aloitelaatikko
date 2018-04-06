@@ -1,9 +1,8 @@
 <%-- 
-    Document   : tulostaAloitteetKayttaja
-    Created on : 8.12.2017, 11:46:30
+    Document   : haeAloitteet
+    Created on : Apr 6, 2018, 11:15:59 AM
     Author     : s1601382
 --%>
-
 <%@page import="Tietovarastopakkaus.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -18,10 +17,10 @@
 
         <link href="/Aloitelaatikko_ver2/CSS/signin.css" rel="stylesheet" type="text/css"/>
         <link href="/Aloitelaatikko_ver2/CSS/style3.css" rel="stylesheet" type="text/css"/>
-        <style> 
+
+        <style>
             body {
-                background-image: url("/Aloitelaatikko_ver2/jspSivut/spagettikissav2.jpg");
-                background-size: cover;
+                background-color: #14cad4;
                 color: black;
                 font-family: Comic Sans, cursive;
                 font-size: 14px;
@@ -32,6 +31,7 @@
                 border: 1px;
                 text-align: center;
             }
+
             .thAloiteID {
                 width: 5%;
             }
@@ -41,7 +41,7 @@
             }
 
             .thKuvaus {
-                width: 45%;
+                width: 50%;
             }
 
             .thPVM {
@@ -53,11 +53,7 @@
             }
 
             .thVaihe {
-                width: 5%;
-            }
-
-            .thMuokkaa {
-                width: 5%
+                width: 10%
             }
 
             .tdKuvaus {
@@ -72,56 +68,60 @@
                 max-width: 80%;
             }
         </style>
-        <title>Aloitteiden haku</title>
+
+        <title>Hae aloite</title>
         <link rel="shortcut icon" href="/Aloitelaatikko_ver2/jspSivut/favicon.ico" type="image/x-icon">
     </head>
+    <%
+        Tietovarasto tietovarasto = new Tietovarasto();
+    %>
     <body>
-        <nav class="navbar navbar-expand-sm navbar-dark">
-            <!-- Brand/logo -->
-            <a href="tulostaAloitteetKayttaja.jsp" class="navbar-brand"><img src="/Aloitelaatikko_ver2/jspSivut/pahvilaatikko2.png"></a>
-            <a class="navbar-brand" href="tulostaAloitteetKayttaja.jsp">Aloitelaatikko</a>
-
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="../Kayttaja/etusivuKayttaja.jsp">Palaa etusivulle</a>
-                </li>
-            </ul>
-        </nav>
-        <%
-            Tietovarasto tietovarasto = new Tietovarasto();
+        <div class="container">
+            <form style="float: right; display: inline-block; margin-top: 10px;" class="formStyle" name="lisays" action="tulostaAloitteet.jsp">
+                <input type="submit" class="btn btn-primary" value="Palaa" name="palaa">
+            </form>
+            <h1 style="display: inline-block;">Aloitteen haku aloitteen nimellä</h1>
+            <form name="haku" method="POST">
+                <p>
+                    <label>
+                        Anna haettavan aloitteen nimi:
+                        <input class="form-control" name="aloiteNimi" size="30">
+                    </label>
+                    <input style="margin-bottom: 3px;" class="btn btn-primary" name="hae" type="submit" value ="Hae"/>
+                </p>
+            </form>
+        </div>
+        <% request.setCharacterEncoding("UTF-8");
+            String haettava = request.getParameter("aloiteNimi");
+            if (haettava != null && !haettava.isEmpty()) {
         %>
         <div class="container">
-            <h1>Kaikki aloitteet</h1>
+            <H3>Hakusanalla löytyi seuraavat aloitteet:</h3>
             <div class="table-responsive">
                 <table class="table table-striped" border="1">
                     <thead class="thead-dark">
-                        <tr>
-                            <th class="thAloiteID">ID</th>
+                        <tr class="tr">
+                            <th class="thAloiteID">AloiteID</th>
                             <th class="thNimi">Aloitenimi</th>
                             <th class="thKuvaus">Kuvaus</th>
-                            <th class="thPVM">pvm</th>
+                            <th class="thPVM">Pvm</th>
                             <th class="thKayttajaID">KäyttäjäID</th>
-                            <th class="thvaihe">Vaihe</th>
-                            <th class="thMuokkaa">Muokkaa</th>
+                            <th class="thVaihe">Vaihe</th>
                         </tr>
                     </thead>
                     <tbody>
                         <%
-                            String vaihe = "";
-                            for (Aloite aloite : tietovarasto.haeKaikkiAloitteet()) {
-                                int kayttajaid = (Integer) session.getAttribute("kayttajaID");
-                                if (aloite.getKayttajaID() == kayttajaid) {
+                            for (Aloite aloite : tietovarasto.haeAloite(haettava)) {
                         %>
                         <tr>
                             <td><%= aloite.getAloiteID()%></td>
-                            <td class="tdNimi"><%= aloite.getAloitenimi()%></td>
-                            <td class="tdKuvaus"><%= aloite.getAloitekuvaus()%></td>
+                            <td><%= aloite.getAloitenimi()%></td>
+                            <td><%= aloite.getAloitekuvaus()%></td>
                             <td><%= aloite.getPvm()%></td>
                             <td><%= aloite.getKayttajaID()%></td>
-
                             <% if (tietovarasto.toimenpideTehty(aloite.getAloiteID())) {%>
                             <%
-                                vaihe = Tietovarasto.getVaihe();
+                                String vaihe = Tietovarasto.getVaihe();
                                 if (vaihe.equals("1")) {
                             %>
                             <td>-</td>
@@ -138,21 +138,15 @@
                             %>
                             <td>Valmis</td>
                             <% } %>
-                            <% } else { %>
-                            <td>-</td>
-                            <% }%>
-                            <td>
-                                <form name="lisays" action='muokkaaAloitetta.jsp?aloiteID=<%=aloite.getAloiteID()%>&aloitenimi=<%=aloite.getAloitenimi()%>&aloitekuvaus=<%=aloite.getAloitekuvaus()%>' method="post">
-                                    <input type="hidden" name="aloitePVM" value='<%=aloite.getPvm()%>'>
-                                    <input class="btn btn-warning muokkaa-btn" type="submit" value=">" name="muokkaa">
-                                </form>
-                            </td>
                         </tr>
-                        <% }
-                            }%>
+                        <% } else { %>
+                    <td>-</td>
+                    <% }
+                        }%>
                     </tbody>
                 </table>
             </div>
         </div>
+        <%}%>
     </body>
 </html>

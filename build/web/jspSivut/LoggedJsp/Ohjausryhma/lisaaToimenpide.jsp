@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
@@ -37,7 +38,11 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <% if (session.getAttribute("ryhma").equals("Ohjausryhma")) {%>
                     <a class="nav-link" href="../Ohjausryhma/etusivuOhjausryhma.jsp">Palaa etusivulle</a>
+                    <% } else if (session.getAttribute("ryhma").equals("Yllapito")) {%>
+                    <a class="nav-link" href="../Yllapito/etusivuYllapito.jsp">Palaa etusivulle</a>
+                    <% } %>
                 </li>
             </ul>
         </nav>
@@ -67,9 +72,5 @@
                 <input type="hidden" name="aloiteID" value="<%=aloiteID%>">
             </form>
         </div>
-
-        <footer class="container-fluid footer text-center fixed-bottom">
-            <p>Aloitelaatikko Made By Julius Kinnarinen (&copy;)</p>
-        </footer>
     </body>
 </html>

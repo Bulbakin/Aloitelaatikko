@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
@@ -23,6 +24,7 @@
                 background-size: cover;
                 color: black;
                 font-family: Comic Sans, cursive;
+                font-size: 14px;
             }
             <% } else if (session.getAttribute("ryhma").equals("Ohjausryhma")) {%>
             body {
@@ -30,6 +32,7 @@
                 background-size: cover;
                 color: black;
                 font-family: Comic Sans, cursive;
+                font-size: 14px;
             }
             <% } else if (session.getAttribute("ryhma").equals("Yllapito")) {%>
             body {
@@ -37,6 +40,7 @@
                 background-size: cover;
                 color: black;
                 font-family: Comic Sans, cursive;
+                font-size: 14px;
             }
             <% } %>
 
@@ -64,10 +68,6 @@
 
             .thKayttajaID {
                 width: 5%;
-            }
-
-            .thPoista {
-                width: 5%
             }
 
             .thVaihe {
@@ -111,7 +111,10 @@
             Tietovarasto tietovarasto = new Tietovarasto();
         %>
         <div class="container">
-            <h1>Kaikki aloitteet</h1>
+            <h1 style="display: inline-block;">Kaikki aloitteet</h1>
+            <form style="float: right; display: inline-block; margin-top: 10px;" class="formStyle" name="lisays" action="haeAloitteet.jsp">
+                <input type="submit" class="btn btn-primary" value="Hae" name="Hae">
+            </form>
             <div class="table-responsive">
                 <table class="table table-striped" border="1">
                     <thead class="thead-dark">
@@ -121,7 +124,7 @@
                             <th class="thKuvaus">Kuvaus</th>
                             <th class="thPVM">Pvm</th>
                             <th class="thKayttajaID">KäyttäjäID</th>
-                            <th class="vaihe">Vaihe</th>
+                            <th class="thVaihe">Vaihe</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -132,7 +135,7 @@
                         <tr>
                             <td><%= aloite.getAloiteID()%></td>
                             <%
-                                if (session.getAttribute("ryhma").equals("Ohjausryhma")) {
+                                if (session.getAttribute("ryhma").equals("Ohjausryhma") || session.getAttribute("ryhma").equals("Yllapito")) {
                                     if (!tietovarasto.toimenpideTehty(aloite.getAloiteID())) {%>
                             <td class="tdNimi"><a href="../Ohjausryhma/lisaaToimenpide.jsp?aloiteID=<%=aloite.getAloiteID()%>&aloitekuvaus=<%= aloite.getAloitekuvaus()%>"><%=aloite.getAloitenimi()%></a></td>
                                 <% } else {%>
@@ -159,9 +162,9 @@
                             %>
                             <td>Työn alla</td>
                             <%
-                            } else {
+                            } else if (vaihe.equals("4")) {
                             %>
-                            <td>Työn alla</td>
+                            <td>Valmis</td>
                             <% } %>
                         </tr>
                         <% } else { %>
@@ -172,9 +175,5 @@
                 </table>
             </div>
         </div>
-
-        <footer class="container-fluid footer text-center fixed-bottom">
-            <p>Aloitelaatikko Made By Julius Kinnarinen (&copy;)</p>
-        </footer>
     </body>
 </html>

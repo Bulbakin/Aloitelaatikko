@@ -9,20 +9,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
-        <link href="../CSS/signin.css" rel="stylesheet" type="text/css"/>
-        <link href="../CSS/style3.css" rel="stylesheet" type="text/css"/>
-        
-        <style>
-            body{
-                font-family: Comic Sans, cursive;
-            }
-        </style>
+        <link href="/Aloitelaatikko_ver2/CSS/signin.css" rel="stylesheet" type="text/css"/>
+        <link href="/Aloitelaatikko_ver2/CSS/style3.css" rel="stylesheet" type="text/css"/>
 
         <title>Aloitelaatikko</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -34,7 +29,7 @@
             <a class="navbar-brand" href="index.jsp">Aloitelaatikko</a>
         </nav>
 
-        <div class="indexDiv form-group">
+        <div class="customDiv form-group">
             <h1>Kirjautuminen</h1>
             <form class="form-signin" name="lisays" action="../../Aloitelaatikko_ver2/index" method="post">
                 <%

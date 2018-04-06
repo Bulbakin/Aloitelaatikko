@@ -10,6 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
@@ -23,9 +24,10 @@
                 background-size: cover;
                 color: black;
                 font-family: Comic Sans, cursive;
+                font-size: 14px;
             }
 
-            .table {
+            table {
                 background: rgba(255, 255, 255, 0.7) !important;
                 border: 1px;
                 text-align: center;
@@ -65,7 +67,7 @@
             .tdNimi {
                 text-align: left !important;
             }
-            
+
             .container {
                 max-width: 80%;
             }
@@ -94,13 +96,13 @@
                 <table class="table table-striped" border="1">
                     <thead class="thead-dark">
                         <tr>
-                            <th class="th thAloiteID">ID</th>
-                            <th class="th thNimi">Aloitenimi</th>
-                            <th class="th thKuvaus">Kuvaus</th>
-                            <th class="th thPVM">pvm</th>
-                            <th class="th thKayttajaID">KäyttäjäID</th>
-                            <th class="th thvaihe">Vaihe</th>
-                            <th class="th thMuokkaa">Muokkaa</th>
+                            <th class="thAloiteID">ID</th>
+                            <th class="thNimi">Aloitenimi</th>
+                            <th class="thKuvaus">Kuvaus</th>
+                            <th class="thPVM">pvm</th>
+                            <th class="thKayttajaID">KäyttäjäID</th>
+                            <th class="thvaihe">Vaihe</th>
+                            <th class="thMuokkaa">Muokkaa</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -132,9 +134,9 @@
                             %>
                             <td>Työn alla</td>
                             <%
-                            } else {
+                            } else if (vaihe.equals("4")) {
                             %>
-                            <td>Työn alla</td>
+                            <td>Valmis</td>
                             <% } %>
                             <% } else { %>
                             <td>-</td>
@@ -152,9 +154,5 @@
                 </table>
             </div>
         </div>
-
-        <footer class="container-fluid footer text-center fixed-bottom">
-            <p>Aloitelaatikko Made By Julius Kinnarinen (&copy;)</p>
-        </footer>
     </body>
 </html>

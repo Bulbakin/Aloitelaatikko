@@ -247,6 +247,39 @@ public class Tietovarasto {
         }
         return aloitteet;
     }
+    
+    public List<Aloite> haeAloite(String aloitenimi) {
+        List<Aloite> aloitteet = new ArrayList<Aloite>();
+
+        Connection yhteys = null;
+        PreparedStatement hakulause = null;
+        ResultSet tulosjoukko = null;
+
+        try {
+            yhteys = YhteydenHallinta.avaaYhteys(ajuri, url, this.kayttajatunnus, salasana);
+            if (yhteys != null) {
+                String haeKaikkiSQL = "select * from aloitteet where aloitenimi=?";
+
+                hakulause = yhteys.prepareStatement(haeKaikkiSQL);
+                hakulause.setString(1, aloitenimi);
+                tulosjoukko = hakulause.executeQuery();
+
+                while (tulosjoukko.next()) {
+                    Aloite aloite = new Aloite(tulosjoukko.getInt(1), tulosjoukko.getString(2), tulosjoukko.getString(3), tulosjoukko.getString(4), tulosjoukko.getInt(5));
+                    aloitteet.add(aloite);
+                }
+            }
+        } catch (Exception ex) {
+
+        } finally {
+
+            YhteydenHallinta.suljeTulosjoukko(tulosjoukko);
+            YhteydenHallinta.suljeLause(hakulause);
+            YhteydenHallinta.suljeYhteys(yhteys);
+
+        }
+        return aloitteet;
+    }
 
     public List<Kayttaja> haeKaikkiKayttajat() {
         List<Kayttaja> kayttajat = new ArrayList<Kayttaja>();
