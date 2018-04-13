@@ -35,7 +35,7 @@ public class logout extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         session.invalidate();
-        response.sendRedirect("jspSivut/index.jsp");
+        response.sendRedirect("/Aloitelaatikko_ver2/jspSivut/index.jsp");
         }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
