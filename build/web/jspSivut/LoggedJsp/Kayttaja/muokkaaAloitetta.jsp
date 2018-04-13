@@ -55,9 +55,9 @@
         %>
         <div class="container">
             <h1>Muokkaa aloitetta</h1>
-            <form name="muokkaa" action="/Aloitelaatikko_ver2/muokkaaAloitetta" method="post">
-                <input type="text" class="" name="aloitenimi" value="<%=aloiteNimi%>"><br>
-                <textarea rows="10" cols="40" name="aloitekuvaus"><%=aloiteKuvaus%></textarea><br>
+            <form name="muokkaa" class="formStyle" action="/Aloitelaatikko_ver2/muokkaaAloitetta" method="post">
+                Aloitteen nimi:<input type="text" class="form-control" name="aloitenimi" value="<%=aloiteNimi%>"><br>
+                Aloitteen kuvaus:<textarea class="form-control" rows="10" cols="40" name="aloitekuvaus"><%=aloiteKuvaus%></textarea>
                 <input type="submit" class="btn btn-warning" name="submit" value="Muokkaa">
                 <input type="hidden" name="aloiteID" value='<%=aloiteID%>'>
             </form>
@@ -69,9 +69,5 @@
                 <input type="hidden" name="aloitePVM" value='<%=aloitePVM%>'>
             </form>
         </div>
-
-        <footer class="container-fluid footer text-center fixed-bottom">
-            <p>Aloitelaatikko Made By Julius Kinnarinen (&copy;)</p>
-        </footer>
     </body>
 </html>
