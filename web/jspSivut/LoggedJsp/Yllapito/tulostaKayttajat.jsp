@@ -86,7 +86,11 @@
             Tietovarasto tietovarasto = new Tietovarasto();
         %>
         <div class="container">
-            <h1>Kaikki Käyttäjät</h1>
+            <h1 style="display: inline-block;">Kaikki Käyttäjät</h1>
+            <form style="float: right; display: inline-block; margin-top: 10px;" class="formStyle" name="lisays" action="etusivuYllapito.jsp">
+                <input type="submit" class="btn btn-primary" value="Palaa" name="palaa">
+            </form>
+            
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead class="thead-dark">

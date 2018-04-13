@@ -29,7 +29,7 @@
             H1 {
                 text-align: center;
             }
-            
+
             .inputSize {
                 height: 40px;
             }
@@ -74,8 +74,30 @@
                 Salasana:<input class="form-control" type="text" name="salasana" value="<%=salasana%>">
                 Puhelin:<input class="form-control" type="text" name="puhelin" value="<%=puhelin%>">
                 Luontipäiväys:<input class="form-control" type="text" name="luontipaivays" readonly value="<%=luontipaivays%>">
-                Ryhmä:<input class="form-control" type="text" name="ryhma" value="<%=ryhma%>">
-
+                Ryhmä:
+                <select style="height: 50px;" class="form-control" name="ryhma">
+                    <%
+                        if (ryhma.equals("Ohjausryhma")) {
+                    %>
+                    <option value="Ohjausryhma">Ohjausryhmä</option>
+                    <option value="Kayttaja">Käyttäjä</option>
+                    <option value="Yllapito">Ylläpito</option>
+                    <%
+                    } else if (ryhma.equals("Yllapito")) {
+                    %>
+                    <option value="Yllapito">Ylläpito</option>
+                    <option value="Ohjausryhma">Ohjausryhmä</option>
+                    <option value="Kayttaja">Käyttäjä</option>
+                    <%
+                    } else if (ryhma.equals("Kayttaja")) {
+                    %>
+                    <option value="Kayttaja">Käyttäjä</option>
+                    <option value="Yllapito">Ylläpito</option>
+                    <option value="Ohjausryhma">Ohjausryhmä</option>
+                    <%
+                        }
+                    %>
+                </select><br>
                 <input type="submit" class="btn btn-warning" name="muokkaa" value="Muokkaa">
             </form>
             <form class="container customDiv" name="poista" action="/Aloitelaatikko_ver2/poistaKayttaja">
